@@ -1,0 +1,15 @@
+{
+  "name": "io.cronapp.apps.apresentacaocldf",
+  "displayName": "ApresentacaoCLDF",
+  "version": "1.0.0",
+  "description": "ApresentacaoCLDF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CronApp IDE",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cronapi-js": "2.9.3-SP.4"
+  }
+}

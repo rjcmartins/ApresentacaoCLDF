@@ -1,0 +1,130 @@
+<ion-view cache-view="false" hide-back-button="true" role="region">
+    <ion-header-bar role="heading" class="bar bar-header bar-default" xattr-theme="bar-default"
+                    data-component="crn-ion-header-bar">
+        <div side="left" class="buttons buttons-left header-item">
+            <button aria-labelledby="left_navicon_sr" class="button button-clear"
+                    ng-if="!Clientes.inserting && !Clientes.editing" menu-toggle="left"
+                    data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-navicon"></i>
+                <span id="left_navicon_sr"
+                      class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span>
+            </button>
+            <button aria-labelledby="left_arrowback_sr" class="button button-clear"
+                    ng-if="Clientes.inserting || Clientes.editing"
+                    ng-click="Clientes.cancel()" data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-ios-arrow-back"></i>
+                <span id="left_arrowback_sr" class="sr-only">{{'Roles.view.Voltar' | translate}}</span>
+            </button>
+        </div>
+        <h1 class="title">Clientes</h1>
+        <div side="right" class="buttons buttons-right header-item">
+            <button aria-labelledby="right_plus_sr" class="button button-clear"
+                    ng-if="!Clientes.inserting && !Clientes.editing"
+                    ng-click="Clientes.startInserting()" data-component="crn-button"
+                    xattr-type="button-clear">
+                <i class="icon ion-ios-plus-empty"></i>
+                <span id="right_plus_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span>
+            </button>
+            <button aria-labelledby="right_checkmark_sr" class="button button-clear"
+                    ng-if="Clientes.inserting || Clientes.editing"
+                    ng-click="Clientes.post()" data-component="crn-button" xattr-type="button-clear">
+                <i class="icon ion-ios-checkmark"></i>
+                <span id="right_checkmark_sr"
+                      class="sr-only">{{'Accessibility.Button.Aria.Label.Save' | translate}}</span>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle"
+             data-component="crn-datasource" id="crn-datasource-906854">
+            <datasource data-component="crn-datasource"  name="Clientes"
+                        entity="app.Clientes" keys="_objectKey" rows-per-page="10"
+                        delete-message="Deseja remover?" class=""
+                        schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;first_name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;last_name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;genero&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;profissao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" ></datasource>
+        </div>
+
+        <div crn-datasource="Clientes" class="" ng-hide="Clientes.editing || Clientes.inserting">
+            <cron-list ng-model="vars.cronlistClientes" id="ion-list-main" options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;Clientes&quot;,&quot;entity&quot;:&quot;app.Clientes&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;app.Clientes&quot;,&quot;customId&quot;:&quot;Clientes&quot;,&quot;name&quot;:&quot;Clientes&quot;,&quot;customQueryName&quot;:&quot;app.Clientes&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;app.entity.Clientes&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;first_name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;last_name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;genero&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;profissao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;type&quot;:&quot;entity&quot;,&quot;hasError&quot;:false},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;first_name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;last_name&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;genero&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;profissao&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;id&quot;:&quot;app.Clientes&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:false,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;hideModalButtons&quot;:true,&quot;editable&quot;:&quot;datasource&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;first_name&quot;,&quot;headerText&quot;:&quot;First Name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;last_name&quot;,&quot;headerText&quot;:&quot;Last Name&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:false,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Command&quot;,&quot;headerText&quot;:&quot;{{ 'Action' | translate }}&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;showAsImage&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;entityDataSource&quot;:{&quot;hasError&quot;:false},&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false,&quot;fillDatasource&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[],&quot;groupings&quot;:[],&quot;fillDatasource&quot;:false,&quot;enableModalSaveAdd&quot;:false}" class="component-holder ng-binding ng-scope" data-component="crn-ion-list" id="crn-ion-list-62592">
+            </cron-list>
+        </div>
+        <div ng-show="Clientes.editing || Clientes.inserting">
+            <form crn-datasource="Clientes">
+                <div class="list"
+                     ng-disabled="!Clientes.editing &amp;&amp; !Clientes.inserting">
+            <!-- first_name begin -->
+            <label for="textinput-first_name-62592" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-first_name-62592">
+                <span class="input-label">First Name</span>
+                <input
+                        type="text"
+                        placeholder="First Name"
+                        ng-model="Clientes.active.first_name"
+                        id="textinput-first_name-62592"
+                        name="textinput-first_name"
+				
+                        mask=""
+				>
+            </label>
+            <!-- last_name begin -->
+            <label for="textinput-last_name-62592" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-last_name-62592">
+                <span class="input-label">Last Name</span>
+                <input
+                        type="text"
+                        placeholder="Last Name"
+                        ng-model="Clientes.active.last_name"
+                        id="textinput-last_name-62592"
+                        name="textinput-last_name"
+				
+                        mask=""
+				>
+            </label>
+            <!-- email begin -->
+            <label for="textinput-email-62592" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-email-62592">
+                <span class="input-label">Email</span>
+                <input
+                        type="text"
+                        placeholder="Email"
+                        ng-model="Clientes.active.email"
+                        id="textinput-email-62592"
+                        name="textinput-email"
+				
+                        mask=""
+				>
+            </label>
+            <!-- genero begin -->
+            <label for="textinput-genero-62592" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-genero-62592">
+                <span class="input-label">Genero</span>
+                <input
+                        type="text"
+                        placeholder="Genero"
+                        ng-model="Clientes.active.genero"
+                        id="textinput-genero-62592"
+                        name="textinput-genero"
+				
+                        mask=""
+				>
+            </label>
+            <!-- profissao begin -->
+            <label for="textinput-profissao-62592" class="item item-input item-stacked-label"
+                   data-component="crn-input-floating" id="lbl-profissao-62592">
+                <span class="input-label">Profissao</span>
+                <input
+                        type="text"
+                        placeholder="Profissao"
+                        ng-model="Clientes.active.profissao"
+                        id="textinput-profissao-62592"
+                        name="textinput-profissao"
+				
+                        mask=""
+				>
+            </label>
+
+                    <!-- NtoN  -->
+                    <!-- NtoN  end-->
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
